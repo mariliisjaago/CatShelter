@@ -1,0 +1,47 @@
+<div class="page-content">
+    <div class="card">
+        <div class="card-header">
+            We have 7 cats waiting for a home!
+        </div>
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <button class="btn btn-warning" (click)="toggleImages()">{{isImages ? 'Hide' : 'Show'}} images</button>
+                        </td>
+                    <tr>
+                        <td>
+                            <label>Filtered by age category: </label>
+                            <input type="text" [(ngModel)]='listFilter' />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Age category</th>
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cat of cats">
+                        <td><img *ngIf="isImages" [src]='cat.imageUrl' [style.width.px]='imageWidth'></td>
+                        <td>{{cat.name}}</td>
+                        <td>{{cat.age}}</td>
+                        <td>{{cat.ageCategory}}</td>
+                        <td>{{cat.colorId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+    
+        </div>
+    </div>
+</div>
+
